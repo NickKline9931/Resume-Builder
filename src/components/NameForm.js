@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import './../styles/NameForm.css';
 
-function NameForm() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [address, setAddress] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
+function NameForm({ nameDisplay, firstName, lastName, address, phone, email, setFirstName, setLastName, setAddress, setPhone, setEmail }) {
 
     function changeFirstName(e) {
         setFirstName(e.target.value);
@@ -27,8 +23,8 @@ function NameForm() {
         setEmail(e.target.value);
     }
 
-    render (
-        <div>
+    return (
+        <div className={nameDisplay}>
             <form>
                     <label>
                         First Name:
@@ -60,3 +56,5 @@ function NameForm() {
         </div>
     )
 }
+
+export default NameForm;
