@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './../styles/NameForm.css';
 
-function NameForm({ nameDisplay, firstName, lastName, address, phone, email, setFirstName, setLastName, setAddress, setPhone, setEmail }) {
+function NameForm({ nameDisplay, setNameDisplay, firstName, lastName, address, phone, email, setFirstName, setLastName, setAddress, setPhone, setEmail }) {
+
+    function hideNameForm() {
+        setNameDisplay('hidden');
+    }
 
     function changeFirstName(e) {
         setFirstName(e.target.value);
@@ -51,7 +55,7 @@ function NameForm({ nameDisplay, firstName, lastName, address, phone, email, set
                         <input type='email' value={email} onChange={changeEmail}></input>
                     </label>
 
-                    <button type='submit'>Submit</button>
+                    <button type='button' onClick={hideNameForm}>Submit</button>
                 </form>
         </div>
     )

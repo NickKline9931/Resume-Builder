@@ -27,7 +27,7 @@ function ResumeBuilder() {
                     <h4>Phone: {phone}</h4>
                     <h4>Email: {email}</h4>
                     <button type="button" onClick={editName}></button>
-                    <NameForm firstName={firstName} lastName={lastName} address={address} phone={phone} email={email} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setPhone={setPhone} setEmail={setEmail} nameDisplay={nameDisplay} /> 
+                    <NameForm firstName={firstName} lastName={lastName} address={address} phone={phone} email={email} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setPhone={setPhone} setEmail={setEmail} nameDisplay={nameDisplay} setNameDisplay={setNameDisplay} /> 
                 </div>
             </main>
         </div>
