@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../styles/NameForm.css';
 
 function NameForm({ nameDisplay, setNameDisplay, firstName, lastName, address, phone, email, setFirstName, setLastName, setAddress, setPhone, setEmail }) {
@@ -32,27 +32,27 @@ function NameForm({ nameDisplay, setNameDisplay, firstName, lastName, address, p
             <form>
                     <label>
                         First Name:
-                        <input type='text' value={firstName} onChange={changeFirstName}></input>
+                        <input type='text' value={firstName} onChange={changeFirstName} />
                     </label>
 
                     <label>
                         Last Name:
-                        <input type='text' value={lastName} onChange={changeLastName}></input>
+                        <input type='text' value={lastName} onChange={changeLastName} />
                     </label>
 
                     <label>
                         Address:
-                        <input type='text' value={address} onChange={changeAddress}></input>
+                        <input type='text' value={address} onChange={changeAddress} />
                     </label>
 
                     <label>
                         Phone:
-                        <input type='number' value={phone} onChange={changePhone}></input>
+                        <input type='number' value={phone} onChange={changePhone} />
                     </label>
 
                     <label>
                         Email:
-                        <input type='email' value={email} onChange={changeEmail}></input>
+                        <input type='email' value={email} onChange={changeEmail} />
                     </label>
 
                     <button type='button' onClick={hideNameForm}>Submit</button>

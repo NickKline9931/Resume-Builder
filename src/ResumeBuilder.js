@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NameForm from './components/NameForm';
+import WorkForm from './components/WorkForm';
 import './styles/ResumeBuilder.css';
 
 function ResumeBuilder() {
@@ -9,6 +10,7 @@ function ResumeBuilder() {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [nameDisplay, setNameDisplay] = useState('hidden');
+    const [workDisplay, setWorkDisplay] = useState('hidden');
 
     function editName() {
         setNameDisplay('showing');
@@ -29,6 +31,8 @@ function ResumeBuilder() {
                     <button type="button" onClick={editName}></button>
                     <NameForm firstName={firstName} lastName={lastName} address={address} phone={phone} email={email} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setPhone={setPhone} setEmail={setEmail} nameDisplay={nameDisplay} setNameDisplay={setNameDisplay} /> 
                 </div>
+
+                <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} />
             </main>
         </div>
     )
