@@ -27,6 +27,10 @@ function WorkForm({workDisplay, setWorkDisplay}) {
         setWorkDisplay('hidden');
     }
 
+    function showWorkForm() {
+        setWorkDisplay('showing');
+    }
+
     function changeCompany(e) {
         setCompany(e.target.value);
     }
@@ -49,6 +53,7 @@ function WorkForm({workDisplay, setWorkDisplay}) {
 
     return (
         <div>
+            <button type='button' onClick={showWorkForm}>+</button>
             <form className={workDisplay}>
                 <label>
                     Company:
