@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NameForm from './components/NameForm';
 import WorkForm from './components/WorkForm';
+import EducationForm from './components/EducationForm';
 import './styles/ResumeBuilder.css';
 
 function ResumeBuilder() {
@@ -33,6 +34,7 @@ function ResumeBuilder() {
                 </div>
 
                 <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} />
+                <EducationForm />
             </main>
         </div>
     )

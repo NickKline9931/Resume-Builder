@@ -1,5 +1,3 @@
-
-
 function Job({jobs, setJobs}) {
     function deleteJob(deleted) {
         setJobs((current) => {
@@ -10,7 +8,7 @@ function Job({jobs, setJobs}) {
     const listItems = jobs.map(
         (job, index) => {
             return (
-                <li key={index} id={index}>
+                <li key={index}>
                     <h4>{job.company}</h4>
                     <h4>From {job.startDate}</h4>
                     <h4>To {job.leftDate}</h4>
