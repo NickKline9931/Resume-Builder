@@ -27,6 +27,15 @@ function WorkForm({workDisplay, setWorkDisplay}) {
         setWorkDisplay('hidden');
     }
 
+    function cancel() {
+        setCompany('');
+        setStartDate('');
+        setLeftDate('');
+        setJobTitle('');
+        setRoleDescr('');
+        setWorkDisplay('hidden');
+    }
+
     function showWorkForm() {
         setWorkDisplay('showing');
     }
@@ -55,6 +64,7 @@ function WorkForm({workDisplay, setWorkDisplay}) {
         <div>
             <button type='button' onClick={showWorkForm}>+</button>
             <form className={workDisplay}>
+                <button type="button" onClick={cancel}>X</button>
                 <label>
                     Company:
                     <input type='text' value={company} onChange={changeCompany} />
@@ -80,10 +90,10 @@ function WorkForm({workDisplay, setWorkDisplay}) {
                     <textarea value={roleDescr} onChange={changeRoleDescr} />
                 </label>
 
-                <button  type='button' onClick={addJob}></button>
+                <button  type='button' onClick={addJob}>Submit</button>
             </form>
 
-            <Job jobs={jobs} />
+            <Job jobs={jobs} setJobs={setJobs} />
         </div>
     )
 }
