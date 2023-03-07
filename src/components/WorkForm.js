@@ -78,12 +78,12 @@ function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs}) {
                     <input type='text' value={jobTitle} onChange={changeJobTitle} />
                 </label>
 
-                <label>
-                    Description of role:
-                    <textarea value={roleDescr} onChange={changeRoleDescr} maxLength="100" className='role'/>
-                </label>
-
                 <div className='workFormButtons'>
+                    <label>
+                        Description of role:
+                        <textarea value={roleDescr} onChange={changeRoleDescr} maxLength="100" className='role'/>
+                    </label>
+
                     <button type="button" onClick={cancel} className='cancelJob'>Cancel</button>
                     <button  type='button' onClick={addJob} className='submitJob'>Submit</button>
                 </div>

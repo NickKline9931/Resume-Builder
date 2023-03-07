@@ -17,6 +17,11 @@
    overflow: auto;
 }
 
+label {
+    display: flex;
+    flex-direction: column;
+}
+
 #workForm > form > label {
     display: flex; 
     flex-direction: column;
@@ -36,10 +41,14 @@
 .cancelJob {
     background-color: red;
     color: white;
-    margin-right: 5px;
 }
 
 .workFormButtons {
     display: flex;
     position: relative;
+}
+
+.workFormButtons > * {
+    align-self: flex-end;
+    margin-right: 3px;
 }

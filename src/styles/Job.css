@@ -6,15 +6,15 @@
 .jobItem {
     display: flex;
     flex-direction: column;
-    align-items: center;
     border: 3px solid black;
-    width: 100%;
+    width: 40%;
     height: 150px;
     overflow: auto;
     background-color: white;
     margin-bottom: 3px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .jobDelete {
@@ -30,30 +30,19 @@
 
 .companyAndTitle {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: -40px;
-    position: relative;
-    top: -10px;
-    left: -20px;
+    margin-bottom: -35px;
 }
 
-.company {
-    margin-bottom: -20px;
+.companyAndTitle > * {
+    align-self: flex-end;
+}
+
+.workInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .dates {
     display: flex;
-    margin-bottom: -30px;
-    position: relative; 
-    left: -20px;
-}
-
-.startDate {
-    margin-right: 20px;
-}
-
-.roleDescr {
-    position: relative;
-    left: -20px;
+    margin-bottom: -28px;
 }
