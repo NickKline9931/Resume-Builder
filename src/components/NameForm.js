@@ -1,18 +1,14 @@
 import React from 'react';
 import './../styles/NameForm.css';
 
-function NameForm({ nameDisplay, setNameDisplay, firstName, lastName, address, phone, email, setFirstName, setLastName, setAddress, setPhone, setEmail }) {
+function NameForm({ nameDisplay, setNameDisplay, name, address, phone, email, setName, setAddress, setPhone, setEmail, aboutMe, setAboutMe }) {
 
     function hideNameForm() {
         setNameDisplay('hidden');
     }
 
-    function changeFirstName(e) {
-        setFirstName(e.target.value);
-    }
-
-    function changeLastName(e) {
-        setLastName(e.target.value);
+    function changeName(e) {
+        setName(e.target.value);
     }
 
     function changeAddress(e) {
@@ -27,35 +23,40 @@ function NameForm({ nameDisplay, setNameDisplay, firstName, lastName, address, p
         setEmail(e.target.value);
     }
 
+    function changeAboutMe(e) {
+        setAboutMe(e.target.value);
+    }
+
     return (
-        <div className={nameDisplay}>
+        <div className={nameDisplay} id="nameForm">
+            <h1 className='personalHeading'>Personal/Contact Info</h1>
             <form>
-                    <label>
-                        First Name:
-                        <input type='text' value={firstName} onChange={changeFirstName} />
+                    <label className='nameInput'>
+                        Name:
+                        <input type='text' value={name} onChange={changeName} />
                     </label>
 
-                    <label>
-                        Last Name:
-                        <input type='text' value={lastName} onChange={changeLastName} />
-                    </label>
-
-                    <label>
+                    <label className='addressInput'>
                         Address:
                         <input type='text' value={address} onChange={changeAddress} />
                     </label>
 
-                    <label>
+                    <label className='phoneInput'>
                         Phone:
                         <input type='number' value={phone} onChange={changePhone} />
                     </label>
 
-                    <label>
+                    <label className='emailInput'>
                         Email:
                         <input type='email' value={email} onChange={changeEmail} />
                     </label>
 
-                    <button type='button' onClick={hideNameForm}>Submit</button>
+                    <label className='aboutMeInput'>
+                        About Me:
+                        <textarea maxLength="123" value={aboutMe} onChange={changeAboutMe} />
+                    </label>
+
+                    <button type='button' onClick={hideNameForm} className='nameButton'>Submit</button>
                 </form>
         </div>
     )

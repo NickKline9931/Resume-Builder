@@ -1,3 +1,5 @@
+import './../styles/Job.css';
+
 function Job({jobs, setJobs}) {
     function deleteJob(deleted) {
         setJobs((current) => {
@@ -8,13 +10,17 @@ function Job({jobs, setJobs}) {
     const listItems = jobs.map(
         (job, index) => {
             return (
-                <li key={index}>
-                    <h4>{job.company}</h4>
-                    <h4>From {job.startDate}</h4>
-                    <h4>To {job.leftDate}</h4>
-                    <h4>{job.jobTitle}</h4>
-                    <h4>{job.roleDescr}</h4>
-                    <button type='button' onClick={() => {deleteJob(job)}}>X</button>
+                <li key={index} className='jobItem'>
+                    <div className='companyAndTitle'>
+                        <h2 className='company'>{job.company}</h2>
+                        <h4 className='jobTitle'>{job.jobTitle}</h4>
+                    </div>
+                    <div className='dates'>
+                        <h4 className='startDate'>From: {job.startDate}</h4>
+                        <h4 className='leftDate'>To: {job.leftDate}</h4>
+                    </div>
+                    <h4 className='roleDescr'>{job.roleDescr}</h4>
+                    <button type='button' onClick={() => {deleteJob(job)}} className='jobDelete'>X</button>
                 </li>
             )
         }
@@ -22,7 +28,7 @@ function Job({jobs, setJobs}) {
     
 
 return (
-    <div>
+    <div className='jobContainer'>
         <ul>
             {listItems}
         </ul>

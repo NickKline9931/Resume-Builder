@@ -3,39 +3,54 @@ import NameForm from './components/NameForm';
 import WorkForm from './components/WorkForm';
 import EducationForm from './components/EducationForm';
 import './styles/ResumeBuilder.css';
+import pencil from './images/pencil.png';
+import Job from './components/Job';
 
 function ResumeBuilder() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const [aboutMe, setAboutMe] = useState('');
     const [nameDisplay, setNameDisplay] = useState('hidden');
     const [workDisplay, setWorkDisplay] = useState('hidden');
+    const [jobs, setJobs] = useState([]);
 
     function editName() {
         setNameDisplay('showing');
     }
 
+    function showWorkForm() {
+        setWorkDisplay('showing');
+    }
+
     return (
-        <div>
-            <header>
-                <h1>Resume Builder</h1>
-            </header>
-
-            <main>
-                <div className="nameDiv">
-                    <h4>Name: {firstName} {lastName}</h4>
-                    <h4>Address: {address}</h4>
-                    <h4>Phone: {phone}</h4>
-                    <h4>Email: {email}</h4>
-                    <button type="button" onClick={editName}></button>
-                    <NameForm firstName={firstName} lastName={lastName} address={address} phone={phone} email={email} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setPhone={setPhone} setEmail={setEmail} nameDisplay={nameDisplay} setNameDisplay={setNameDisplay} /> 
+        <div className='resumeBuilder'>
+            <div className='personalAndDegrees'>
+                <header>
+                    <h1 className='personalHeading'>Personal/Contact Info</h1>
+                    <h4 className='namePlate'>Name: {name}</h4>
+                    <h4 className='addressPlate'>Address: {address}</h4>
+                    <h4 className='phonePlate'>Phone: {phone}</h4>
+                    <h4 className='emailPlate'>Email: {email}</h4>
+                    <h4 className='aboutMePlate'>About Me: <p className='personalDescr'>{aboutMe}</p></h4>
+                    <button type="button" onClick={editName}><img src={pencil} alt='pencil'></img></button>
+                    <NameForm name={name} address={address} phone={phone} email={email} setName={setName} setAddress={setAddress} setPhone={setPhone} setEmail={setEmail} nameDisplay={nameDisplay} setNameDisplay={setNameDisplay} aboutMe={aboutMe} setAboutMe={setAboutMe} /> 
+                </header>
+                <div className='educationDiv'>
+                    <h1>Education</h1>
+                    <EducationForm />
                 </div>
+            </div>
 
-                <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} />
-                <EducationForm />
-            </main>
+                <div className='workDiv'>
+                    <div className='workDivHeader'>
+                        <button type='button' onClick={showWorkForm} className='workButton'>+</button>
+                        <h1 className='workHeading'>Work Experience</h1>
+                    </div>
+                        <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} jobs={jobs} setJobs={setJobs}/>
+                        <Job jobs={jobs} setJobs={setJobs} />
+                </div>
         </div>
     )
 }

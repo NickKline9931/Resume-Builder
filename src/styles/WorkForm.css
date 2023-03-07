@@ -1,0 +1,45 @@
+#workForm {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+#workForm > form {
+   background-color: white;
+   border: 1px solid black;
+   flex-wrap: wrap;
+   padding-left: 8px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   width: 100%;
+   overflow: auto;
+}
+
+#workForm > form > label {
+    display: flex; 
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.role {
+    height: 50px;
+    width: 400px;
+}
+
+.cancelJob, .submitJob {
+    height: 25px;
+}
+
+.cancelJob {
+    background-color: red;
+    color: white;
+    margin-right: 5px;
+}
+
+.workFormButtons {
+    display: flex;
+    position: relative;
+}

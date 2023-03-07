@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Job from './Job';
+import './../styles/WorkForm.css';
 
-function WorkForm({workDisplay, setWorkDisplay}) {
-    const [jobs, setJobs] = useState([]);
+function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs}) {
     const [company, setCompany] = useState('');
     const [startDate, setStartDate] = useState('');
     const [leftDate, setLeftDate] = useState('');
@@ -36,10 +35,6 @@ function WorkForm({workDisplay, setWorkDisplay}) {
         setWorkDisplay('hidden');
     }
 
-    function showWorkForm() {
-        setWorkDisplay('showing');
-    }
-
     function changeCompany(e) {
         setCompany(e.target.value);
     }
@@ -61,10 +56,8 @@ function WorkForm({workDisplay, setWorkDisplay}) {
     }
 
     return (
-        <div>
-            <button type='button' onClick={showWorkForm}>+</button>
+        <div id='workForm'>
             <form className={workDisplay}>
-                <button type="button" onClick={cancel}>X</button>
                 <label>
                     Company:
                     <input type='text' value={company} onChange={changeCompany} />
@@ -87,13 +80,14 @@ function WorkForm({workDisplay, setWorkDisplay}) {
 
                 <label>
                     Description of role:
-                    <textarea value={roleDescr} onChange={changeRoleDescr} />
+                    <textarea value={roleDescr} onChange={changeRoleDescr} maxLength="100" className='role'/>
                 </label>
 
-                <button  type='button' onClick={addJob}>Submit</button>
+                <div className='workFormButtons'>
+                    <button type="button" onClick={cancel} className='cancelJob'>Cancel</button>
+                    <button  type='button' onClick={addJob} className='submitJob'>Submit</button>
+                </div>
             </form>
-
-            <Job jobs={jobs} setJobs={setJobs} />
         </div>
     )
 }

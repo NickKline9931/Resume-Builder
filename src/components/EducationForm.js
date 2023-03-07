@@ -64,7 +64,7 @@ function EducationForm() {
     return (
         <div>
             <button type='button' onClick={showEducationForm}>+</button>
-            <form className={educationFormDisplay}>
+            <form className={educationFormDisplay} id='educationForm'>
                 <button type='button' onClick={cancel}>Cancel</button>
                 <label>
                     School Name:
