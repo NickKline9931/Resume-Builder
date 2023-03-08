@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../styles/WorkForm.css';
 
-function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs}) {
-    const [company, setCompany] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [leftDate, setLeftDate] = useState('');
-    const [jobTitle, setJobTitle] = useState('');
-    const [roleDescr, setRoleDescr] = useState('');
+function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs, company, setCompany, jobTitle, setJobTitle, startDate, setStartDate, leftDate, setLeftDate, roleDescr, setRoleDescr}) {
 
     function addJob() {
         const newJob = {
@@ -58,34 +53,40 @@ function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs}) {
     return (
         <div id='workForm'>
             <form className={workDisplay}>
-                <label>
-                    Company:
-                    <input type='text' value={company} onChange={changeCompany} />
-                </label>
+                <div>
+                    <label className='companyInput'>
+                        Company:
+                        <input type='text' value={company} onChange={changeCompany} />
+                    </label>
 
-                <label>
-                    Date Started:
-                    <input type='text' value={startDate} onChange={changeStartDate} />
-                </label>
+                    <label>
+                        Job title:
+                        <input type='text' value={jobTitle} onChange={changeJobTitle} />
+                    </label>
+                </div>
+
+                <div>
+                    <label className='startDateInput'>
+                        Date Started:
+                        <input type='text' value={startDate} onChange={changeStartDate} />
+                    </label>
 
                 <label>
                     Date left:
                     <input type='text' value={leftDate} onChange={changeLeftDate} />
                 </label>
+            </div>
 
-                <label>
-                    Job title:
-                    <input type='text' value={jobTitle} onChange={changeJobTitle} />
-                </label>
 
-                <div className='workFormButtons'>
+                <div className='workFormBottom'>
                     <label>
                         Description of role:
                         <textarea value={roleDescr} onChange={changeRoleDescr} maxLength="100" className='role'/>
                     </label>
-
-                    <button type="button" onClick={cancel} className='cancelJob'>Cancel</button>
-                    <button  type='button' onClick={addJob} className='submitJob'>Submit</button>
+                    <div className='workFormButtons'>
+                        <button type="button" onClick={cancel} className='cancelJob'>Cancel</button>
+                        <button  type='button' onClick={addJob} className='submitJob'>Submit</button>
+                    </div>
                 </div>
             </form>
         </div>

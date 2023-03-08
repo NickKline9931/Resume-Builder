@@ -46,3 +46,9 @@
     display: flex;
     margin-bottom: -28px;
 }
+
+.roleDescr {
+    width: 260px;
+    height: auto;
+    overflow-wrap: normal;
+}

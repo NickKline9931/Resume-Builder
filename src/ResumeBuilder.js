@@ -15,6 +15,11 @@ function ResumeBuilder() {
     const [nameDisplay, setNameDisplay] = useState('hidden');
     const [workDisplay, setWorkDisplay] = useState('hidden');
     const [jobs, setJobs] = useState([]);
+    const [company, setCompany] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [leftDate, setLeftDate] = useState('');
+    const [jobTitle, setJobTitle] = useState('');
+    const [roleDescr, setRoleDescr] = useState('');
 
     function editName() {
         setNameDisplay('showing');
@@ -48,8 +53,8 @@ function ResumeBuilder() {
                         <button type='button' onClick={showWorkForm} className='workButton'>+</button>
                         <h1 className='workHeading'>Work Experience</h1>
                     </div>
-                        <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} jobs={jobs} setJobs={setJobs}/>
-                        <Job jobs={jobs} setJobs={setJobs} />
+                        <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} jobs={jobs} setJobs={setJobs} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr}/>
+                        <Job jobs={jobs} setJobs={setJobs} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr}/>
                 </div>
         </div>
     )
