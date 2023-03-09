@@ -1,7 +1,7 @@
 import React from 'react';
 import './../styles/WorkForm.css';
 
-function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs, company, setCompany, jobTitle, setJobTitle, startDate, setStartDate, leftDate, setLeftDate, roleDescr, setRoleDescr}) {
+function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs, company, setCompany, jobTitle, setJobTitle, startDate, setStartDate, leftDate, setLeftDate, roleDescr, setRoleDescr, jobSaver, setJobSaver}) {
 
     function addJob() {
         const newJob = {
@@ -28,6 +28,7 @@ function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs, company, setCompa
         setJobTitle('');
         setRoleDescr('');
         setWorkDisplay('hidden');
+        setJobs(jobSaver);
     }
 
     function changeCompany(e) {

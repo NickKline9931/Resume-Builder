@@ -14,6 +14,7 @@ function ResumeBuilder() {
     const [aboutMe, setAboutMe] = useState('');
     const [nameDisplay, setNameDisplay] = useState('hidden');
     const [workDisplay, setWorkDisplay] = useState('hidden');
+    const [jobSaver, setJobSaver] = useState([]);
     const [jobs, setJobs] = useState([]);
     const [company, setCompany] = useState('');
     const [startDate, setStartDate] = useState('');
@@ -27,6 +28,7 @@ function ResumeBuilder() {
 
     function showWorkForm() {
         setWorkDisplay('showing');
+        setJobSaver(jobs);
     }
 
     return (
@@ -53,8 +55,8 @@ function ResumeBuilder() {
                         <button type='button' onClick={showWorkForm} className='workButton'>+</button>
                         <h1 className='workHeading'>Work Experience</h1>
                     </div>
-                        <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} jobs={jobs} setJobs={setJobs} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr}/>
-                        <Job jobs={jobs} setJobs={setJobs} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr}/>
+                        <WorkForm workDisplay={workDisplay} setWorkDisplay={setWorkDisplay} jobs={jobs} setJobs={setJobs} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr} jobSaver={jobSaver} setJobSaver={setJobSaver}/>
+                        <Job jobs={jobs} setJobs={setJobs} setWorkDisplay={setWorkDisplay} company={company} setCompany={setCompany} jobTitle={jobTitle} setJobTitle={setJobTitle} startDate={startDate} setStartDate={setStartDate} leftDate={leftDate} setLeftDate={setLeftDate} roleDescr={roleDescr} setRoleDescr={setRoleDescr} setJobSaver={setJobSaver}/>
                 </div>
         </div>
     )
