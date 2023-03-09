@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
-import Degree from './Degree';
+import React from 'react';
+import './../styles/EducationForm.css';
 
-function EducationForm() {
-    const [degrees, setDegrees] = useState([]);
-    const [school, setSchool] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [finishDate, setFinishDate] = useState('');
-    const [field, setField] = useState('');
-    const [certification, setCertification] = useState('');
-    const [educationFormDisplay, setEducationFormDisplay] = useState('hidden');
+function EducationForm({educationFormDisplay, setEducationFormDisplay, degreeSaver, school, setSchool, schoolStartDate, setSchoolStartDate, finishDate, setFinishDate, field, setField, certification, setCertification, degrees, setDegrees}) {
 
     function addDegree() {
         const newDegree = {
             school: school,
-            startDate: startDate,
+            startDate: schoolStartDate,
             finishDate: finishDate,
             field: field,
             certification: certification
         }
         
-        setDegrees([...degrees, newDegree]);
+        setDegrees(degrees => [...degrees, newDegree]);
         setSchool('');
-        setStartDate('');
+        setSchoolStartDate('');
         setFinishDate('');
         setField('');
         setCertification('');
@@ -30,15 +23,12 @@ function EducationForm() {
 
     function cancel() {
         setSchool('');
-        setStartDate('');
+        setSchoolStartDate('');
         setFinishDate('');
         setField('');
         setCertification('');
         setEducationFormDisplay('hidden');
-    }
-
-    function showEducationForm() {
-        setEducationFormDisplay('showing');
+        setDegrees(degreeSaver);
     }
 
     function changeSchool(e) {
@@ -46,7 +36,7 @@ function EducationForm() {
     }
 
     function changeStartDate(e) {
-        setStartDate(e.target.value);
+        setSchoolStartDate(e.target.value);
     }
 
     function changeFinishDate(e) {
@@ -62,39 +52,38 @@ function EducationForm() {
     }
 
     return (
-        <div>
-            <button type='button' onClick={showEducationForm}>+</button>
+        <div className='schoolFormContainer'>
             <form className={educationFormDisplay} id='educationForm'>
-                <button type='button' onClick={cancel}>Cancel</button>
                 <label>
                     School Name:
                     <input type='text' value={school} onChange={changeSchool}></input>
                 </label>
+                <div className='schoolDates'>
+                    <label>
+                        Started:
+                        <input type='text' value={schoolStartDate} onChange={changeStartDate}></input>
+                    </label>
 
-                <label>
-                    Start Date:
-                    <input type='text' value={startDate} onChange={changeStartDate}></input>
-                </label>
-
-                <label>
-                    Finish Date:
-                    <input type='text' value={finishDate} onChange={changeFinishDate}></input>
-                </label>
-
+                    <label>
+                        Finished:
+                        <input type='text' value={finishDate} onChange={changeFinishDate}></input>
+                    </label>
+                </div>
                 <label>
                     Field of Study:
                     <input type='text' value={field} onChange={changeField}></input>
                 </label>
 
-                <label>
-                    Degree/Certification Attained:
+                <label className='certification'>
+                    Degree/Certification:
                     <input type='text' value={certification} onChange={changeCertification}></input>
                 </label>
-
-                <button type='button' onClick={addDegree}>Submit</button>
+                <div className='schoolButtons'>
+                    <button type='button' onClick={cancel} className='cancelDegree'>Cancel</button>
+                    <button type='button' onClick={addDegree}>Submit</button>
+                </div>
             </form>
 
-            <Degree degrees={degrees} setDegrees={setDegrees} />
         </div>
     )
 }

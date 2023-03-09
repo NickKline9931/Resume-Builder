@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 .resumeBuilder {
     display: flex;
 }
@@ -19,7 +23,7 @@ header {
     height: 250px;
     background-color: aquamarine;
     border: 1px solid black;
-    border-radius: 3%;
+    border-radius: 15px;
     position: relative;
 }
 
@@ -95,17 +99,19 @@ header > button > img {
     position: relative;
     background-color: aquamarine;
     border: 1px solid black;
-    border-radius: 3%;
-    height: 500px;
+    border-radius: 15px;
+    height: 507px;
     width: 840px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 40px;
+    padding-left: 0.3%;
     overflow: auto;
+    margin-bottom: 4%;
 }
 
-.workButton {
+.addItemButton {
     height: 25px;
     width: 25px;
     border-radius: 50%;
@@ -120,7 +126,12 @@ header > button > img {
 .educationDiv {
     background-color: aquamarine;
     border: 1px solid black;
-    border-radius: 3%;
+    border-radius: 15px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 header, .workDiv, .educationDiv {
@@ -132,15 +143,7 @@ header, .workDiv, .educationDiv {
     position: absolute;
 }
 
-#workForm {
-    position: absolute;
-}
-
-#educationForm {
-    position: absolute;
-}
-
-.workDivHeader {
+.divHeader {
     display: flex;
     align-items: center;
     position: relative;
@@ -153,4 +156,8 @@ header, .workDiv, .educationDiv {
     display: flex;
     flex-direction: column;
     width: 90%;
+}
+
+#eduHeader {
+    left: -3px;
 }
