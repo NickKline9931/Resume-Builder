@@ -25,7 +25,7 @@ function Degree({degrees, setDegrees, school, setSchool, schoolStartDate, setSch
                 <li key={index} className='degreeItem'>
                     <h4>{degree.school}</h4>
                     <div className='schoolDateDisplay'>
-                        <h4>From: {degree.startDate}</h4>
+                        <h4 className='schoolStart'>From: {degree.startDate}</h4>
                         <h4>To: {degree.finishDate}</h4>
                     </div>
                     <h4>{degree.field}</h4>

@@ -62,11 +62,12 @@
 
 .companyAndTitle {
     display: flex;
+    flex-direction: column;
     margin-bottom: -35px;
 }
 
-.companyAndTitle > * {
-    align-self: flex-end;
+.companyAndTitle > h2 {
+    margin-bottom: -20px;
 }
 
 .workInfo {
@@ -83,4 +84,8 @@
     width: 260px;
     height: auto;
     overflow-wrap: normal;
+}
+
+.startDate {
+    margin-right: 10px;
 }

@@ -3,7 +3,6 @@
     position: relative;
     left: -25px;
     bottom: 35px;
-    overflow: hidden;
 }
 
 .degreeContainer > ul {
@@ -65,4 +64,8 @@
 .degreeEdit > img {
     width: 200%;
     height: auto;
+}
+
+.schoolStart {
+    margin-right: 10px;
 }

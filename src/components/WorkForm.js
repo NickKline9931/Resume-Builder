@@ -69,12 +69,12 @@ function WorkForm({workDisplay, setWorkDisplay, jobs, setJobs, company, setCompa
                 <div>
                     <label className='startDateInput'>
                         Date Started:
-                        <input type='text' value={startDate} onChange={changeStartDate} />
+                        <input type='date' value={startDate} onChange={changeStartDate} />
                     </label>
 
                 <label>
                     Date left:
-                    <input type='text' value={leftDate} onChange={changeLeftDate} />
+                    <input type='date' value={leftDate} onChange={changeLeftDate} />
                 </label>
             </div>
 

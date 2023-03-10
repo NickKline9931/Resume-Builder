@@ -89,7 +89,7 @@ header > button > img {
 }
 
 .personalDescr {
-    max-width: 400px;
+    width: 350px;
     word-wrap: break-word;
     position: absolute;
     top: 30%;
@@ -100,7 +100,7 @@ header > button > img {
     background-color: aquamarine;
     border: 1px solid black;
     border-radius: 15px;
-    height: 507px;
+    height: 526px;
     width: 840px;
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ header > button > img {
     background-color: aquamarine;
     border: 1px solid black;
     border-radius: 15px;
-    height: 250px;
+    height: 268px;
     display: flex;
     flex-direction: column;
     align-items: center;

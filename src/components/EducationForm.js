@@ -61,12 +61,12 @@ function EducationForm({educationFormDisplay, setEducationFormDisplay, degreeSav
                 <div className='schoolDates'>
                     <label>
                         Started:
-                        <input type='text' value={schoolStartDate} onChange={changeStartDate}></input>
+                        <input type='date' value={schoolStartDate} onChange={changeStartDate}></input>
                     </label>
 
                     <label>
                         Finished:
-                        <input type='text' value={finishDate} onChange={changeFinishDate}></input>
+                        <input type='date' value={finishDate} onChange={changeFinishDate}></input>
                     </label>
                 </div>
                 <label>
